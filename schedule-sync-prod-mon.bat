@@ -13,7 +13,7 @@ set DB_DATABASE=lightstar
 set TABLE_NAME=tb_joborder
 
 :: Set Laravel app API endpoint
-set LARAVEL_APP_ENDPOINT=http://127.0.0.1:8000/api/jo
+set LARAVEL_APP_ENDPOINT=https://gsaints.net/fab-mon/api/jo
 
 :: Set columns for the query
 set COLUMN_NAMES=jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname

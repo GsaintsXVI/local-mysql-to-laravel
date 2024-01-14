@@ -1,0 +1,24 @@
+2024-01-15_001923 MySQL command: D:\xampp\htdocs\local-mysql-to-laravel\mysql.exe -h localhost -P 3306 -u local -pP@$$W0rd -Dlightstar  -e "SELECT jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname FROM tb_joborder jo LEFT JOIN tb_clients cl ON cl.clientid = jo.Client_ID;" 
+2024-01-15_001923 MySQL connection successful 
+2024-01-15_001923 MySQL query: SELECT jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname FROM tb_joborder jo LEFT JOIN tb_clients cl ON cl.clientid = jo.Client_ID; 
+2024-01-15_001923 Temporary file content: 
+1001	1	Job for ABC Corporation	Pending	11/01/2024	CV001	ABC Corporation
+1002	2	Job for XYZ Ltd	Approved	13/01/2024	CV002	XYZ Ltd
+1003	3	Job for LMN Enterprises	In Progress	12/01/2024	CV003	LMN Enterprises
+1004	4	Job for PQR Industries	Completed	12/01/2024	CV004	PQR Industries
+2024-01-15_002359 MySQL command: D:\xampp\htdocs\local-mysql-to-laravel\mysql.exe -h localhost -P 3306 -u local -pP@$$W0rd -Dlightstar  -e "SELECT jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname FROM tb_joborder jo LEFT JOIN tb_clients cl ON cl.clientid = jo.Client_ID;" 
+2024-01-15_002359 MySQL connection successful 
+2024-01-15_002359 MySQL query: SELECT jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname FROM tb_joborder jo LEFT JOIN tb_clients cl ON cl.clientid = jo.Client_ID; 
+2024-01-15_002359 Temporary file content: 
+1001	1	Job for ABC Corporation	Pending	11/01/2024	CV001	ABC Corporation
+1002	2	Job for XYZ Ltd	Approved	13/01/2024	CV002	XYZ Ltd
+1003	3	Job for LMN Enterprises	In Progress	12/01/2024	CV003	LMN Enterprises
+1004	4	Job for PQR Industries	Completed	12/01/2024	CV004	PQR Industries
+2024-01-15_002423 MySQL command: D:\xampp\htdocs\local-mysql-to-laravel\mysql.exe -h localhost -P 3306 -u local -pP@$$W0rd -Dlightstar  -e "SELECT jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname FROM tb_joborder jo LEFT JOIN tb_clients cl ON cl.clientid = jo.Client_ID;" 
+2024-01-15_002423 MySQL connection successful 
+2024-01-15_002423 MySQL query: SELECT jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname FROM tb_joborder jo LEFT JOIN tb_clients cl ON cl.clientid = jo.Client_ID; 
+2024-01-15_002423 Temporary file content: 
+1001	1	Job for ABC Corporation	Pending	11/01/2024	CV001	ABC Corporation
+1002	2	Job for XYZ Ltd	Approved	13/01/2024	CV002	XYZ Ltd
+1003	3	Job for LMN Enterprises	In Progress	12/01/2024	CV003	LMN Enterprises
+1004	4	Job for PQR Industries	Completed	12/01/2024	CV004	PQR Industries
