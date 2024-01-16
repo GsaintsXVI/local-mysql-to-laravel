@@ -13,8 +13,8 @@ set DB_DATABASE=lightstar
 set TABLE_NAME=tbl_joborder
 
 :: Set Laravel app API endpoint
-set LARAVEL_APP_ENDPOINT=https://lscph.net/api/jo
-@REM set LARAVEL_APP_ENDPOINT=http://127.0.0.1:8000/api/jo
+@REM set LARAVEL_APP_ENDPOINT=https://lscph.net/api/jo
+set LARAVEL_APP_ENDPOINT=http://127.0.0.1:8000/api/jo
 
 :: Get current date and time
 for /f "delims=" %%a in ('wmic OS Get localdatetime ^| find "."') do set "DT=%%a"
@@ -29,7 +29,7 @@ set LOG_FILE=%~dp0\output_%DATE_ONLY%.log
 set JSON_FILE=%~dp0\output_%DATE_ONLY%.json
 
 
-set "filename=max_jobid.txt"
+set "filename=%~dp0\max_jobid.txt"
 set "content="
 
 REM Read file line by line and append to the content variable
@@ -92,7 +92,7 @@ del %TEMP_FILE%
 
 :: Query to get the max JobID
 set MAX_JOBID_QUERY=SELECT MAX(JobID) FROM %TABLE_NAME% where JobID ^>= !content! >nul
-set MAX_JOBID_FILE=max_jobid.txt
+set MAX_JOBID_FILE=%~dp0\max_jobid.txt
 
 :: Execute query and save result to a text file
 "%MYSQL_PATH%\mysql.exe" -h !DB_HOST! -u !DB_USER! -p!DB_PASSWORD! -D !DB_DATABASE! -e "!MAX_JOBID_QUERY!" --batch --raw --skip-column-names > %MAX_JOBID_FILE%
