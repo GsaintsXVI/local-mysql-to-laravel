@@ -7,13 +7,13 @@ set MYSQL_PATH=%~dp0
 :: Set MySQL connection parameters
 set DB_HOST=localhost
 set DB_PORT=3306
-set DB_USER=local
+set DB_USER=root
 set DB_PASSWORD=P@$$W0rd
-set DB_DATABASE=lightstar
+set DB_DATABASE=lightstar2
 set TABLE_NAME=tbl_joborder
 
 :: Set Laravel app API endpoint
-@REM set LARAVEL_APP_ENDPOINT=https://lscph.net/api/jo
+REM set LARAVEL_APP_ENDPOINT=https://lscph.net/api/jo
 set LARAVEL_APP_ENDPOINT=http://127.0.0.1:8000/api/jo
 
 :: Get current date and time
@@ -40,11 +40,11 @@ for /f "delims=" %%a in ('type "%filename%"') do (
 echo Content of the file:
 echo "MAX ID: %content%" >> %LOG_FILE%
 :: Set columns for the query
-set COLUMN_NAMES=jo.JobOrderNo, jo.Client_ID, jo.Note, jo.Status, jo.DueDate, jo.JobID, cl.ClientName
+set COLUMN_NAMES=jo.JobOrderNo, jo.Client_ID, jo.Client_ID, jo.Status, jo.DueDate, jo.JobID, cl.ClientName
 @REM set COLUMN_NAMES=jo.JobOrderNo, jo.Client_ID, jo.Note, jo.status, jo.duedate, cl.customervendorcode, cl.companyname
 
 REM MySQL query
-set SQL_QUERY=SELECT %COLUMN_NAMES% FROM %TABLE_NAME% jo LEFT JOIN tbl_clients cl ON cl.clientid = jo.Client_ID WHERE jo.JobID ^> %content% AND jo.Date ^>= '2024-01-01'; >nul
+set SQL_QUERY=SELECT %COLUMN_NAMES% FROM %TABLE_NAME% jo LEFT JOIN tbl_client cl ON cl.clientid = jo.Client_ID WHERE jo.JobID ^> %content% AND jo.Date ^>= '2024-01-01'; >nul
 
 
 :: Debug: Output MySQL command to log
@@ -88,7 +88,7 @@ if not "!RESULT!"=="" (
 )
 
 @REM :: Delete the temporary file
-del %TEMP_FILE%
+@REM del %TEMP_FILE%
 
 :: Query to get the max JobID
 set MAX_JOBID_QUERY=SELECT MAX(JobID) FROM %TABLE_NAME% where JobID ^>= !content! >nul
