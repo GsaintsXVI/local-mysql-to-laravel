@@ -8,7 +8,7 @@ $dbDatabase = "lightstar2";
 $tableName = "tbl_joborder";
 
 // Set Laravel app API endpoint
-//$laravelAppEndpoint = "https://lscph.net/api/jo";
+//$laravelAppEndpoint = "https://lscph.net/api/jo_v2";
 $laravelAppEndpoint = "http://127.0.0.1:8000/api/jo_v2";
 
 // Get current date and time
@@ -61,8 +61,11 @@ if ($result) {
         while ($row = mysqli_fetch_assoc($result)) {
             $resultArray[] = $row;
             file_put_contents($logFile, date("Y-m-d H:i:s") . " | " . json_encode($row) . "\n", FILE_APPEND);
+            if ($row['ClientName'] == null) {
+                file_put_contents($logFile, date("Y-m-d H:i:s") . " | Aborting!.. Client name is null\n", FILE_APPEND);
+                goto _exit;
+            }
         }
-
 
         // Send data to Laravel app
         $jsonData = json_encode($resultArray);
